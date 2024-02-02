@@ -14,17 +14,6 @@
             window.payex.hostedView.paymentMenu({
                 container: "payment",
                 //culture: 'en-US',
-                onApplicationConfigured: function onApplicationConfigured(_) { console.log(_) },
-                onPaymentTransactionFailed: function onPaymentTransactionFailed(data) { console.log(data) },
-                onPaymentCompleted: function onPaymentCompleted(data) { console.log(data) },
-                onPaymentFailed: function onPaymentFailed(data) { console.log(data) },
-                onPaymentCanceled: function onPaymentCanceled(data) { console.log(data) },
-                onInstrumentSelected: function onInstrumentSelected(data) { console.log(data) },
-                onError: function onError(data) { console.log(data) },
-                onPaymentCreated: function onPaymentCreated(data) { console.log(data) },
-                onPaymentPending: function onPaymentPending(data) { console.log(data) },
-                onPaymentToS: function onPaymentToS(data) { console.log(data) },
-                onExternalRedirect: function onExternalRedirect(data) { console.log(data) }
             }).open();
         };
         // Append the Payment Menu script to the <head>
