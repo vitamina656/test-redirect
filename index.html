@@ -1,10 +1,67 @@
 <!DOCTYPE html>
 <html>
+
+<head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <title>PaymentMenu</title>
+    <script language="javascript">
+        var script = document.createElement('script');
+        var url = "https://ecom.stage.payex.com/checkout/client/42c852a5fb808083ca4444cd9b380673d05917122976eeef9275490854828ee8?culture=en-US&_tc_tid=6770ee2d670449ce893f10fd2a3fcbfb";
+
+        script.setAttribute('src', url);
+        script.onload = function () {
+            window.payex.hostedView.paymentMenu({
+                container: "payment",
+                //culture: 'en-US',
+                onApplicationConfigured: function onApplicationConfigured(_) { console.log(_) },
+                onPaymentTransactionFailed: function onPaymentTransactionFailed(data) { console.log(data) },
+                onPaymentCompleted: function onPaymentCompleted(data) { console.log(data) },
+                onPaymentFailed: function onPaymentFailed(data) { console.log(data) },
+                onPaymentCanceled: function onPaymentCanceled(data) { console.log(data) },
+                onInstrumentSelected: function onInstrumentSelected(data) { console.log(data) },
+                onError: function onError(data) { console.log(data) },
+                onPaymentCreated: function onPaymentCreated(data) { console.log(data) },
+                onPaymentPending: function onPaymentPending(data) { console.log(data) },
+                onPaymentToS: function onPaymentToS(data) { console.log(data) },
+                onExternalRedirect: function onExternalRedirect(data) { console.log(data) }
+            }).open();
+        };
+        // Append the Payment Menu script to the <head>
+        var head = document.getElementsByTagName('head')[0];
+        head.appendChild(script);
+    </script>
+</head>
+
 <body>
-
-<h1>Iframe element</h1>
-
-<iframe src="https://ledger-apps.stage.swedbankpay.com/invoice-transaction/authenticate/501/37ffef22-6a42-2e4e-b7fe-adcd27695807?lang=EN" width="600px" height="1000px">
-
+    <div style="display:flex;justify-content: center;width: 100%;min-height: 500px;align-items: center;">
+        <div style="display:flex;flex-direction:column; align-items: center; width: 70%;">
+        
+        <div id="payment" style="width: 100%;"> </div>
+            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId()">openBankId</button>
+            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId2()">openBankId2</button>
+            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId3()">openBankId3</button>
+            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId4()">openBankId4</button>
+        </div>
+    </div>
+ <script language="javascript">
+       function openBankId() {
+            window.location.href = "bankid:///?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null";
+           // opens bankId but only from mainframe, not working with iframe, sub frame on Safari iOS
+       }
+       function openBankId2() {
+            window.open('bankid:///?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null');
+           // opens bankId and a new browser window at the same time, doesn't work the right way
+       }
+       function openBankId3() {
+            window.open('https://app.bankid.com/?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null', '_blank');
+           // opens bankId on Android and iOS(main frame, sub frame), doesn't work the right way on Desktop
+       }
+      function openBankId4() {
+            window.location.href = 'https://app.bankid.com/?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null';
+           // opens bankId but only from mainframe, not working with iframe, sub frame on Safari iOS
+       }
+    </script>
+    
 </body>
 </html>
