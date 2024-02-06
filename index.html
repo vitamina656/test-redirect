@@ -7,7 +7,7 @@
     <title>PaymentMenu</title>
     <script language="javascript">
         var script = document.createElement('script');
-        var url = "https://ecom.stage.payex.com/checkout/client/b698649fdd16b2b2dd7668b9c27b9586a8285b5704ff06a0a425d39ff51f2117?culture=en-US&_tc_tid=ec399ecc59de43d18fbb0bd199e3bc08";
+        var url = "https://ecom.stage.payex.com/checkout/client/50f264b6c1642387fa399847e4a5f84dd5b002624100b141698830998395404b?culture=en-US&_tc_tid=5cb172d9173a4e51b6fec7b46506c499";
 
         script.setAttribute('src', url);
         script.onload = function () {
@@ -27,30 +27,10 @@
         <div style="display:flex;flex-direction:column; align-items: center; width: 70%;">
         
         <div id="payment" style="width: 100%;"> </div>
-            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId()">openBankId</button>
-            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId2()">openBankId2</button>
-            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId3()">openBankId3</button>
-            <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "openBankId4()">openBankId4</button>
+
         </div>
     </div>
- <script language="javascript">
-       function openBankId() {
-            window.location.href = "bankid:///?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null";
-           // opens bankId but only from mainframe, not working with iframe, sub frame on Safari iOS
-       }
-       function openBankId2() {
-            window.open('bankid:///?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null');
-           // opens bankId and a new browser window at the same time, doesn't work the right way
-       }
-       function openBankId3() {
-            window.open('https://app.bankid.com/?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null', '_blank');
-           // opens bankId on Android and iOS(main frame, sub frame), doesn't work the right way on Desktop
-       }
-      function openBankId4() {
-            window.location.href = 'https://app.bankid.com/?autostarttoken=a4904c4c-3bb4-4e3f-8ac3-0e950e529e5f&redirect=null';
-           // opens bankId but only from mainframe, not working with iframe, sub frame on Safari iOS
-       }
-    </script>
+
     
 </body>
 </html>
