@@ -3,18 +3,18 @@
 
 <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
-    <meta http-equiv="Access-Control-Allow-Origin" content="*" />
     <meta content="utf-8" http-equiv="encoding">
     <title>PaymentMenu</title>
     <script language="javascript">
         var script = document.createElement('script');
-        var url = "https://ecom.stage.payex.com/checkout/client/1a2276804fb33509ca4a4544da7ab07a62136f6cf5fda7b8777cd57506d904cd?culture=en-US&_tc_tid=702df82679334bd998b6cfeab73a066b";
+        var url = "https://ecom.stage.payex.com/checkout/client/3096f1e422d73d1e1fb7e0c1414d6c6fa6737fbc516bd02e5d5533f66600cbfa?culture=en-US&_tc_tid=feda28a7055c4601af426ca16d7eadcc";
 
         script.setAttribute('src', url);
         script.onload = function () {
             window.payex.hostedView.paymentMenu({
                 container: "payment",
                 //culture: 'en-US',
+             onExternalRedirect: function onExternalRedirect(data) {window.location.href=data.redirectUrl},
             }).open();
         };
         // Append the Payment Menu script to the <head>
