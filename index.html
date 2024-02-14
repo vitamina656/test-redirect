@@ -14,7 +14,7 @@
             window.payex.hostedView.paymentMenu({
                 container: "payment",
                 //culture: 'en-US',
-             onExternalRedirect: function onExternalRedirect(data) {window.location.href=data.redirectUrl},
+             onExternalRedirect: function onExternalRedirect(data) {window.parent.location.href=data.redirectUrl},
             }).open();
         };
         // Append the Payment Menu script to the <head>
