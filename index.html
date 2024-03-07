@@ -26,12 +26,17 @@
 <body>
     <div style="display:flex;justify-content: center;width: 100%;min-height: 500px;align-items: center;">
         <div style="display:flex;flex-direction:column; align-items: center; width: 70%;">
-        
+        <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "redirect()">Betal</button>
         <div id="payment" style="width: 100%;"> </div>
 
         </div>
     </div>
-
+ <script language="javascript">
+      
+      function redirect() {
+            window.location.href = 'https://ecom.externalintegration.payex.com/checkout/mobilepay/189a9befd322a0b9ab20e3a70c9c7073e1296a0bed7f2a785cdd974ad386484c?Culture=sv-SE&_tc_tid=b65295421d2d4870a8cb89a52e4cad5f';
+       }
+    </script>
     
 </body>
 </html>
