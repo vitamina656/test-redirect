@@ -7,11 +7,11 @@
     <title>PaymentMenu</title>
     <script language="javascript">
         var script = document.createElement('script');
-        var url = "https://ecom.externalintegration.payex.com/checkout/client/mobilepay/a88faadd497e02a49bb58622dedb26e75255f177f0b51ea4e14e6d4184e3c509?Culture=sv-SE&_tc_tid=7d712d37a201491d869d63bd45754235";
+        var url = "https://ecom.stage.payex.com/checkout/client/bd4f348b0efd58bf97de61edfbabd6a3e10e8473b0cba8f7bb5a0ebe34d39723?culture=en-US&_tc_tid=03857422de0448e6aa78f55d46a99a5b";
 
         script.setAttribute('src', url);
         script.onload = function () {
-            window.payex.hostedView.mobilepay({
+            window.payex.hostedView.paymentmenu({
                 container: "payment",
                 //culture: 'en-US',
              //onExternalRedirect: function onExternalRedirect(data) {window.parent.location.href=data.redirectUrl},
