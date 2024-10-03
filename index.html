@@ -18,6 +18,10 @@
                  console.log(data.redirectUrl)
                  window.location.href=data.redirectUrl
              },
+             onOutOfViewRedirect: function onOutOfViewRedirect(data) {
+                 console.log(data.redirectUrl)
+                 window.location.href=data.redirectUrl
+             },
             }).open();
         };
         // Append the Payment Menu script to the <head>
