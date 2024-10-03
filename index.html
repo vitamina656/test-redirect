@@ -7,11 +7,11 @@
     <title>PaymentMenu</title>
     <script language="javascript">
         var script = document.createElement('script');
-        var url = "https://ecom.stage.payex.com/checkout/client/d08d66a3c22cafeac7a673ecd0c914479ef94461cd2ec4af596b86d031aad361?culture=en-US&_tc_tid=47cf7c833b1b45acbf056f8be32803a7";
+        var url = "https://ecom.stage.payex.com/checkout/client/f91a7f083c13a111e91435fc783566b56442f476216895ccf10d2b9c224c1f04?culture=sv-SE&_tc_tid=dd2d58763a2441169d3be180380a9f9a";
 
         script.setAttribute('src', url);
         script.onload = function () {
-            window.payex.hostedView.paymentMenu({
+            window.payex.hostedView.checkout({
                 container: "payment",
                 //culture: 'en-US',
              //onExternalRedirect: function onExternalRedirect(data) {window.parent.location.href=data.redirectUrl},
@@ -26,7 +26,6 @@
 <body>
     <div style="display:flex;justify-content: center;width: 100%;min-height: 500px;align-items: center;">
         <div style="display:flex;flex-direction:column; align-items: center; width: 70%;">
-        <button style="color: #690422; font-weight: 600;font-size: 25px; margin:10px" onClick= "redirect()">Betal</button>
         <div id="payment" style="width: 100%;"> </div>
 
         </div>
