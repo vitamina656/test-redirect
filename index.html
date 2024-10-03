@@ -14,7 +14,7 @@
             window.payex.hostedView.checkout({
                 container: "payment",
                 //culture: 'en-US',
-             //onExternalRedirect: function onExternalRedirect(data) {window.parent.location.href=data.redirectUrl},
+             onExternalRedirect: function onExternalRedirect(data) {window.parent.location.href=data.redirectUrl},
             }).open();
         };
         // Append the Payment Menu script to the <head>
@@ -32,8 +32,8 @@
     </div>
  <script language="javascript">
       
-      function redirect() {
-            window.location.href = 'https://ecom.externalintegration.payex.com/checkout/mobilepay/189a9befd322a0b9ab20e3a70c9c7073e1296a0bed7f2a785cdd974ad386484c?Culture=sv-SE&_tc_tid=b65295421d2d4870a8cb89a52e4cad5f';
+      function redirect(url) {
+            window.location.href = url;
        }
     </script>
     
